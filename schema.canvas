@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"ca89c95161e58da4","type":"group","x":-260,"y":-160,"width":1580,"height":480,"color":"6","label":"Collaboration Structure"},
+		{"id":"28db6ade1e06e1ec","type":"text","text":"**ros2_ws**","x":100,"y":-140,"width":140,"height":60,"color":"3"},
+		{"id":"44ac1e91a879433a","type":"text","text":"**Documentation_Climb**","x":-240,"y":-140,"width":260,"height":60,"color":"#321aad"},
+		{"id":"91b10d244742c293","type":"text","text":"**Aduino_test**","x":420,"y":-140,"width":160,"height":60,"color":"4"},
+		{"id":"13bc15e551939b74","type":"text","text":"**Mciro_ros2**","x":240,"y":-20,"width":160,"height":60,"color":"#a200fa"},
+		{"id":"e49bce78ca530d2c","type":"text","text":"**Script...**","x":580,"y":-20,"width":160,"height":60,"color":"#a200fa"},
+		{"id":"a190584bfbc30888","type":"text","text":"3D_Folder","x":1140,"y":-140,"width":140,"height":60,"color":"2"},
+		{"id":"da885ccc84a9fc7f","type":"text","text":"**Alpine_Climbing_Robots**","x":800,"y":-140,"width":260,"height":60,"color":"5"},
+		{"id":"ef6747ca169ba4b8","type":"text","text":"**Alpine_Climbing_Robots**","x":400,"y":50,"width":260,"height":60,"color":"5"}
+	],
+	"edges":[
+		{"id":"35520d1195ff9d9c","fromNode":"28db6ade1e06e1ec","fromSide":"bottom","toNode":"13bc15e551939b74","toSide":"left"},
+		{"id":"0e3b939e6d4febc2","fromNode":"91b10d244742c293","fromSide":"bottom","toNode":"e49bce78ca530d2c","toSide":"left"}
+	]
+}

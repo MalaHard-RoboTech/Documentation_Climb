@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "0b71235bb8735b82",
+    "type": "split",
+    "children": [
+      {
+        "id": "8adfcf81edb5314d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67d2ad9260bf73c4",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "schema.canvas",
+                "viewState": {
+                  "x": 530,
+                  "y": 80,
+                  "zoom": -1.3538214306766987
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "schema"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6d95d450bcbaca75",
+    "type": "split",
+    "children": [
+      {
+        "id": "f831c416af3d78f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d2ce33540dc1aa4e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0cbd5c97747c4f4b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7ec3a4acd15c7961",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bef3788bd2773787",
+    "type": "split",
+    "children": [
+      {
+        "id": "b55d2490f869cb12",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1a8de795017ca67",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "438d4851b75328c9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "34e9ba9c5b712319",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "80669e0751b2c9c5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Documentations_Climb_robot/0_Bill_Of_material/BOM aspect.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of BOM aspect"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-kanban:Create new board": false,
+      "webpage-html-export:Export Vault to HTML": false
+    }
+  },
+  "active": "67d2ad9260bf73c4",
+  "lastOpenFiles": [
+    "Main_Documentation.md",
+    "README.md",
+    "0_Bill_Of_material/BOM aspect.md",
+    "Misure.md",
+    "[MalaHard.md",
+    "1_Winch_Calculator/winch_calculator.md",
+    "2_Piston_Calculator/piston_calculator.md",
+    "schema.canvas",
+    "~$Misure_Matlab.xlsx",
+    "Misure_Matlab.xlsx",
+    "0_Bill_Of_material/[BOM]_Consideration about winch motor.docx",
+    "0_Bill_Of_material/[BOM]_list.xlsx",
+    "2_Piston_Calculator/Untitled.md",
+    "Calculator_part",
+    "Misure Matlab.xlsx",
+    "Image/winch calculations (for 1 motor).pdf",
+    "Image/reference_table.jpg",
+    "Image/power_suppply_36v.png",
+    "Image/rope_load.png",
+    "Image/power_suppply_36v 2.png",
+    "Image/Pasted image 20250325113658.png",
+    "Image/power_suppply_36v 1.png",
+    "Image/odesc.png",
+    "Image/motor_choice.png",
+    "Image/brake_system.png",
+    "Image/belt_HTD-5M.png",
+    "Image",
+    "2_Piston_Calculator/piston_calculator.py",
+    "2_Piston_Calculator",
+    "Documentations_Climb_robot/1_Winch_Calculator/winch calculations (for 1 motor).md",
+    "Documentations_Climb_robot/0_Bill_Of_material/BOM aspect.md",
+    "Documentations_Climb_robot/Main Documentation.md",
+    "Documentations_Climb_robot/Winch Calculations/winch calculations (for 1 motor).md",
+    "Documentations_Climb_robot/Winch_Calculator/winch calculations (for 1 motor).md",
+    "Documentations_Climb_robot/alpine robot calculations.md"
+  ]
+}
