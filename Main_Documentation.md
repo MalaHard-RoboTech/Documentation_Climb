@@ -1,4 +1,4 @@
-questo è il main principale di tutto il documento qui puoi trovare Indice dei diversi documenti e aree di OBSIDIAN CLIMB ROBOT contenente i diversi python script tool utilizzati per calcolare i diversi argomenti:
+questo è il main principale di tutto il documento qui puoi trovare Indice dei diversi documenti e aree di OBSIDIAN CLIMB ROBOT contenente i diversi python script tool utilizzati per calcolare i diversi argomenti :
 
 Per il ReadME di git vedi: [[README]]
 
