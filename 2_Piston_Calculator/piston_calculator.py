@@ -28,6 +28,12 @@ velocita_finale = accelerazione_m_s2 * tempo_spinta
 flusso_m3_s_massimo = area_m2 * velocita_finale
 
 
+velocita_aria_tubo = 30  # m/s (valore tipico)
+diametro_tubo_m = math.sqrt((4 * flusso_m3_s_massimo) / (math.pi * velocita_aria_tubo))
+diametro_tubo_mm = diametro_tubo_m * 1000
+
+
+
 # Output
 print(f"\nArea: {area_m2:.6f} m²")
 print(f"Volume: {volume_m3:.9f} m³")
@@ -35,6 +41,7 @@ print(f"Forza: {forza_n:.2f} N")
 print(f"Massa del robot: {massa_robot_kg:.2f} kg")
 print(f"Accelerazione: {accelerazione_m_s2:.2f} m/s²")
 print(f"tempo di spinta: {tempo_spinta:.2f} s")
-print(f"impulso: {impulso:.2f} N s")
+print(f"impulso: {impulso:.2f} N*s")
 print(f"Velocità finale: {velocita_finale:.2f} m/s")
 print(f"Flusso d'aria massimo: {flusso_m3_s_massimo:.5f} m³/s ({flusso_m3_s_massimo * 1000:.2f} L/s)")
+print(f"Diametro interno minimo del tubo: {diametro_tubo_mm:.2f} mm (a {velocita_aria_tubo} m/s)")

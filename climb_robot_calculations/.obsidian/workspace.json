@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "0b71235bb8735b82",
+    "id": "73c7aee7e4005dd4",
     "type": "split",
     "children": [
       {
-        "id": "8adfcf81edb5314d",
+        "id": "27c426a70cbc0de5",
         "type": "tabs",
         "children": [
           {
-            "id": "67d2ad9260bf73c4",
+            "id": "12f564205181e256",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1_Winch_Calculator/winch_calculator.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "winch_calculator"
+              "title": "New tab"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "6d95d450bcbaca75",
+    "id": "b68196bbdd74a3a9",
     "type": "split",
     "children": [
       {
-        "id": "f831c416af3d78f9",
+        "id": "0cec7d5edb24beee",
         "type": "tabs",
         "children": [
           {
-            "id": "d2ce33540dc1aa4e",
+            "id": "aaaee38d38f8d311",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +44,7 @@
             }
           },
           {
-            "id": "0cbd5c97747c4f4b",
+            "id": "b0a152c8b2707118",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +61,7 @@
             }
           },
           {
-            "id": "7ec3a4acd15c7961",
+            "id": "1bbce97f9e980af8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,15 +77,15 @@
     "width": 300
   },
   "right": {
-    "id": "bef3788bd2773787",
+    "id": "66fa1ec5a0568203",
     "type": "split",
     "children": [
       {
-        "id": "b55d2490f869cb12",
+        "id": "73b9f481473cb7e0",
         "type": "tabs",
         "children": [
           {
-            "id": "b1a8de795017ca67",
+            "id": "0a877ac30e15ef64",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -107,7 +103,7 @@
             }
           },
           {
-            "id": "438d4851b75328c9",
+            "id": "2f121c195e168f75",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -120,7 +116,7 @@
             }
           },
           {
-            "id": "34e9ba9c5b712319",
+            "id": "d0ce4edf8c1165eb",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -135,18 +131,17 @@
             }
           },
           {
-            "id": "80669e0751b2c9c5",
+            "id": "d418c98552ade022",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentations_Climb_robot/0_Bill_Of_material/BOM aspect.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of BOM aspect"
+              "title": "Outline"
             }
           }
         ]
@@ -163,48 +158,13 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-kanban:Create new board": false,
-      "webpage-html-export:Export Vault to HTML": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "67d2ad9260bf73c4",
+  "active": "aaaee38d38f8d311",
   "lastOpenFiles": [
-    "Images/piston.png",
-    "Images/air_tube.png",
-    "2_Piston_Calculator/piston_calculator.md",
-    "Main_Documentation.md",
-    "schema.canvas",
-    "README.md",
-    "0_Bill_Of_material/BOM aspect.md",
-    "Misure.md",
-    "[MalaHard.md",
-    "1_Winch_Calculator/winch_calculator.md",
-    "~$Misure_Matlab.xlsx",
-    "Misure_Matlab.xlsx",
-    "0_Bill_Of_material/[BOM]_Consideration about winch motor.docx",
-    "0_Bill_Of_material/[BOM]_list.xlsx",
-    "2_Piston_Calculator/Untitled.md",
-    "Calculator_part",
-    "Misure Matlab.xlsx",
-    "Image/winch calculations (for 1 motor).pdf",
-    "Image/reference_table.jpg",
-    "Image/power_suppply_36v.png",
-    "Image/rope_load.png",
-    "Image/power_suppply_36v 2.png",
-    "Image/Pasted image 20250325113658.png",
-    "Image/power_suppply_36v 1.png",
-    "Image/odesc.png",
-    "Image/motor_choice.png",
-    "Image/brake_system.png",
-    "Image",
-    "2_Piston_Calculator/piston_calculator.py",
-    "2_Piston_Calculator",
-    "Documentations_Climb_robot/1_Winch_Calculator/winch calculations (for 1 motor).md",
-    "Documentations_Climb_robot/0_Bill_Of_material/BOM aspect.md",
-    "Documentations_Climb_robot/Main Documentation.md",
-    "Documentations_Climb_robot/Winch Calculations/winch calculations (for 1 motor).md",
-    "Documentations_Climb_robot/Winch_Calculator/winch calculations (for 1 motor).md",
-    "Documentations_Climb_robot/alpine robot calculations.md"
+    "Welcome.md",
+    "Untitled.md",
+    "hy"
   ]
 }
