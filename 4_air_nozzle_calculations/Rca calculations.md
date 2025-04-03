@@ -1,4 +1,4 @@
-
+#calculator 
 inspired from orbiting satellites we can develop a high trust, very low elettrical power stabilization system using the onboard hign pressure lines like satellite do to orientate satellites into space.
 
 ![[rcs.png]]
