@@ -1,14 +1,13 @@
 #calculator
-This is our calculation to select right motors for  "arganelli"
+This is our calculation to select right motors for  "arganelli".
+here you can found aother point about calculus: Excel (Misure da matlab).
 
-here you can found aother point about calculus: Excel (Misure da matlab)
 
-
-table reference worst case scenario: jump 3 class 10 kg
+table reference worst case scenario: jump 3 class 10 kg.
 
 ![[reference_table.jpg]]
 
-### data taken into account from the table and from matlab
+### Data taken into account from the table and from matlab
 
 $\text{Robot mass} = 10\, \mathrm{kg}$  
 $\text{Jump reference (m)}: [0.5, 1, -10] \rightarrow [0.5, 4, -2]$  
@@ -42,6 +41,8 @@ continuing with an ideal power train loss, because we are already over sizing th
 
 ([motor link](https://www.amazon.it/Dingln-Outrunner-Compatibile-Bilanciamento-Skateboard/dp/B08GWZV7XX/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.zRnsXJbSDBNHhbCPWiuuWNG-NQSjtbGCmGKcV9o69jGowmzJW2oldmW9fZFgN4QMu4amM1Q3BVLgMcyQtX5bp4FNYtfAVmg9TBUJZ4VYJNvz9Rlx0jb1dcbLvrp14ymipZmlZ6vqzrf9ga-Zjcc1Sc6SsutgULlGO-eU8iPuxQ5eE_dInWJb-PvbmSONyze8dY7coI7S22nuK_hOvuQnYvZquxpVu8MnywCm7uq7Ka8gGcVxW1K8u5KOMWwsXy-a0wY_EFS2xvwOgAgNpywt9ztmK65jCcBKjOdfvTrA-uQ.cN9p7v9RetkG4vxiTPCnl10qLSAYbvmHxUXgAqb3t6A&dib_tag=se&keywords=6384+120KV+BLDC&qid=1742896479&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1))
 
+You can find the original motor of Odrive here: [link](https://shop.odriverobotics.com/collections/motors/products/odrive-custom-motor-d6374-150kv)
+instead you can find the datasheet and the simulation here: [datasheet](https://docs.odriverobotics.com/v/latest/hardware/odrive-motors.html#d6374-150kv) and [simulation](https://docs.odriverobotics.com/v/latest/hardware/odrive-motors.html#d6374-150kv)
 
 ## Transmission
 
