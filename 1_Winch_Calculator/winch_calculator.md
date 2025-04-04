@@ -44,6 +44,13 @@ continuing with an ideal power train loss, because we are already over sizing th
 You can find the original motor of Odrive here: [link](https://shop.odriverobotics.com/collections/motors/products/odrive-custom-motor-d6374-150kv)
 instead you can find the datasheet and the simulation here: [datasheet](https://docs.odriverobotics.com/v/latest/hardware/odrive-motors.html#d6374-150kv) and [simulation](https://docs.odriverobotics.com/v/latest/hardware/odrive-motors.html#d6374-150kv)
 
+
+![[Screenshot from 2025-04-04 12-38-05.png]]
+
+
+
+
+
 ## Transmission
 
 This motor suggest a 1:1 gear ration, but for out lighter robot a 2:1 could stress less the motor. we can use a timing belt to move the drum further from the motor shaft.
@@ -82,7 +89,7 @@ As the robot is torque controlled, we choose a FOC BLCD controller based on odes
 
 ## winch cable
 Given that the amount of current draw on the robot could be significant depending on the equipment in use we propose to use a flexible copper wire so that it can conduct but also wrap around the winch shaft, reinforced by a Kevlar or other fibers to bear the traction load.
-![[guaina_pet.png]]
+![[guaina_pet 1.png]]
 We have tested to make sure it can handle at least 500N.
 
 
