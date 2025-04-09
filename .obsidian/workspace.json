@@ -11,14 +11,12 @@
             "id": "9b8e84b54ec3f56a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "1_Winch_Calculator/winch_calculator.md",
-                "mode": "source",
-                "source": false
+                "file": "Images/Pasted image 20250403122027 1.png"
               },
-              "icon": "lucide-file",
-              "title": "winch_calculator"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250403122027 1"
             }
           }
         ]
@@ -200,7 +198,7 @@
         "direction": "vertical",
         "x": 2130,
         "y": 359,
-        "width": 1026,
+        "width": 1024,
         "height": 800,
         "maximize": false,
         "zoom": 0
@@ -233,27 +231,28 @@
         "direction": "vertical",
         "x": 2029,
         "y": 178,
-        "width": 1576,
-        "height": 994,
+        "width": 1024,
+        "height": 800,
         "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "9b8e84b54ec3f56a",
+  "active": "d2ce33540dc1aa4e",
   "lastOpenFiles": [
+    "README.md",
+    "schema.canvas",
+    "Untitled.canvas",
+    "1_Winch_Calculator/winch_calculator.md",
+    "10_Old_calculations/old_calculation.md",
     "2_Piston_Calculator/piston_calculator.md",
     "4_air_nozzle_calculations/Rca calculations.md",
-    "10_Old_calculations/old_calculation.md",
-    "1_Winch_Calculator/winch_calculator.md",
     "Images/guaina_pet.png",
-    "guaina_pet.png",
+    "Images/guaina_pet 2.png",
     "0_Bill_Of_material/BOM aspect.md",
     "Main_Documentation.md",
     "10_Old_calculations",
-    "README.md",
-    "schema.canvas",
-    "Pasted image 20250403122027.png",
+    "Images/Pasted image 20250403122027 1.png",
     "Images/rcs.png",
     "Images/Screenshot 2025-04-03 121802.png",
     "4_air_nozzle_calculations",
