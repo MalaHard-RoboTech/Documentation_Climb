@@ -1,2 +1,2 @@
-Per la BOM puoi vedere il file excel --> [excel]([BOM]_list.xlsx)
+For to see the BOM and know all components and their price, see this excel file--> [excel]([BOM]_list.xlsx)
 
