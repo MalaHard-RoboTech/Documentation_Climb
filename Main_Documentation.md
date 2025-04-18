@@ -9,11 +9,16 @@ Per il ReadME di git vedi: [[README]]
 
 ## Index 
 
+### Mechanical and physics part
 - [[old_calculation]]
 - [[winch_calculator]]
 - [[piston_calculator]]
 - [[BOM aspect]]
 - [[Rca calculations]]
+### Software part
+- [[Software Part]]
+- 
+
 
 > [!Note] **NOTE**: to see value about matlab Simulation see the following excel file: 
  
