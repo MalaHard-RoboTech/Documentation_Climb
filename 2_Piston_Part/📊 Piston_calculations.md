@@ -1,4 +1,17 @@
 #calculator 
+## Introduction
+> This section contains all the engineering calculations used to select the right piston for the Alpine robot.
+
+We document here the full analytical process used to determine the required **Piston** and associated hardware.
+
+To enable the Alpine Robot to perform its jump, each leg must exert approximately **270 N** of force.  
+We have selected a **pneumatic system** consisting of a **piston** and a **proportional valve** to control airflow and pressure.
+
+- **Required leg force**: 270 N  
+- **Max pressure in current setup**: 4.5 bar  
+- **Chosen piston**: 200 mm stroke, 32 mm diameter  
+
+---
 
 In order to make the jump F_leg need to  be 271N.
 We have choosen a pneumatic system comprised of a piston,  and a proportional vale to control it. 

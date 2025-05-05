@@ -1,7 +1,19 @@
 #calculator
+
+## Introduction
+
+> This section contains all the engineering calculations used to select the most suitable components for the **winch system** ("arganelli") of the Alpine Robot.
+
+We document here the full analytical process used to determine the required **motor specifications** and associated hardware. These calculations are crucial for ensuring the winch can deliver the necessary performance under worst-case scenarios.
+
+You'll also find complementary analysis from **MATLAB simulations** and an **Excel spreadsheet** used to cross-verify some values (see: `Misure da MATLAB`).
+
+--- 
+
+## Motor Calculations
+
 This is our calculation to select right motors for  "arganelli".
 here you can found aother point about calculus: Excel (Misure da matlab).
-
 
 Table reference worst case scenario: jump 3 class 10 kg.
 
@@ -47,10 +59,7 @@ Instead you can find the datasheet and the simulation here: [datasheet](https://
 
 ![[Screenshot from 2025-04-04 12-38-05.png]]
 
-
-
-
-
+---
 ## Transmission
 
 This motor suggest a 1:1 gear ration, but for out lighter robot a 2:1 could stress less the motor. we can use a timing belt to move the drum further from the motor shaft.
@@ -66,34 +75,38 @@ A HTD 5M  15mm wide belt can support up to 920N but a 20mm belt maybe is better 
 
 This type of pulleys are hard to find online but i thing we can try to 3d print those without any problem. 
 
-## braking system
+---
+## Braking system
 
 An important feature for this robot and for the motor longevity is the ability of the robot to stay stationary without consuming motor power so we discussed a braking system, a cheap but powerful brake kit should do the work just fine, they will be servo actuated and normally closed.  [NC]
 ([brake system link](https://www.amazon.it/bicicletta-meccanico-anteriore-posteriore-equitazione/dp/B0BTPBTRWZ/ref=sr_1_12?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2706CBRONK2E&dib=eyJ2IjoiMSJ9._NwUE0GvqpW6cEZMUF9KM7E1EXPV0poo_vuuPL_tCbBG7LuavIDuHrxs4l2EF6iApadSmooWXlmmEWcG09NyE1dBtL2uvTNSQKK1IlaG_X5vZ41Bllb0xEjfa9WajkIB7N68Kn3TGNL5k9TK0T2DvesMWeV5OJrQHfArRvE9Gb9EaTMkOKaU4HW_x0y2fWtpmHXvW3nQvf9ZrxRHPZGfWiUQwv-I6qhczNPh2o9hu-93owU8C0qO8Wa6iRWRkjImhByEh1Wkad5XwkpAOctGTTSHQSlS0LQJBBuoBhzbwO8frdZyz3yGaLpqgl3gbG0XfE2T4vWWq7QzHkQygEUOvRnpQDrz8UWIHzCFrFGU77ja5CVfhVR164gx0cx8ilzjCtfMeyNPL5j7uH0jWstPx12LB4ideaFsE041k9n1sd9JEKiePa-m31XEpvxYeQCL.lC4ffUXE8f7wsNoI8tANl5n0WzfJGSlOUb0LnNAVyXM&dib_tag=se&keywords=Kit+freni+a+disco+meccanici+per+bicicletta&qid=1742899341&sprefix=kit+freni+a+disco+meccanici+per+bicicletta%2Caps%2C92&sr=8-12))
 
 ![[brake_system.png]]
-## winch electronics
+
+---
+## Winch electronics
 
 As the motor has a maximum voltage of 36V that's what we are going to propose as main power supply for the winches, a separate one for the robot will be used. 
 the biggest power supply i could find is 1200w at 36v. if under powered we can use 2, one for each winch.
 ([power supply link](https://www.amazon.it/Alimentatore-Trasformatore-Telecamera-Sicurezza-Dispositivo/dp/B0C2R2HS62/ref=sr_1_9?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=CB6KVSTORKR9&dib=eyJ2IjoiMSJ9.UnhK0YfdsgMP0AHob2rT1YQlgSfvcFRO0C5_sAXeRgSOE7AkkzzzwTKjhSA1YXDkdFGew_mn3cyOWTn58230Wb6BARFvMxOqzjzm1Sk-JuDHCS-AA01awPhIDqenWKPUVnKCrtJ7GlP7uSE_bFMn0Roy5qQN3cfV626KYI86R2VcL4sUIOg3Bv_8G1C8GkKHT61MxoSPo7ZK91VoKrKBlm8i7FRUnj7ah9Xvf2I9MaLH2nPKPQ2HEdX8riZiEi7otaw4cPVFK9ZHb5btgULb0SwIMxwn_ai1c79JcCW8sfFEQM2Ahltc6DsUE5rtbVAaJE_ghk1I26NucNGE0TU1u44H8jvw7qh26EX8SlaM8Yj4kIz3dkg0gRMMwWljcU0r72Kao5n4-2TcCCqesvBBSZ39RuS1XedTILkcZfZ2ULLbamd_oZdnJL-mILO6X34_.wKlzBA_5EoQKGBRYn19Ph83O5VbS-oOICnk76EvvOJw&dib_tag=se&keywords=power+supply+2000w+36v&qid=1742901222&sprefix=power+supply+2000w+36v%2Caps%2C97&sr=8-9))
 ![[power_suppply_36v.png]]
 
-### drive motor controller
+--- 
+### Drive motor controller
 As the robot is torque controlled, we choose a FOC BLCD controller based on odesc V4.2, it has proven reliable and up to the standards,  with up to 56V and 120A of peak current. 
 
 ([odesc link](https://www.amazon.it/gp/product/B0DYVLWJZS/ref=ewc_pr_img_2?smid=A38GRUO0066PF0&psc=1))
 ![[odesc.png]]
 
 
-
-## winch cable
+---
+## Winch cable
 Given that the amount of current draw on the robot could be significant depending on the equipment in use we propose to use a flexible copper wire so that it can conduct but also wrap around the winch shaft, reinforced by a Kevlar or other fibers to bear the traction load.
 ![[guaina_pet 1.png]]
 We have tested to make sure it can handle at least 500N.
 
 
-Suppose we want 600W of available power onboard for electronics and other actuators we should use a high voltage for decreasing transmission losses like 48 V we have  12.5 A  a 14 awg cable can be suitable.  [[BOM aspect]] 
+Suppose we want 600W of available power onboard for electronics and other actuators we should use a high voltage for decreasing transmission losses like 48 V we have  12.5 A  a 14 awg cable can be suitable.  [[🧾 BOM aspect]] 
 
 
 

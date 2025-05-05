@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8213f8a9d68cc2da",
+        "id": "08ee53451fcf5e63",
         "type": "tabs",
         "children": [
           {
-            "id": "b90f86cb368afbfc",
+            "id": "90cc607dbdfb3fd6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10_Software_part/Software Part.md",
+                "file": "🧠 Main_Documentation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Software Part"
+              "title": "🧠 Main_Documentation"
             }
           }
         ]
@@ -168,34 +168,36 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "b90f86cb368afbfc",
+  "active": "90cc607dbdfb3fd6",
   "lastOpenFiles": [
-    "Main_Documentation.md",
-    "10_Software_part/Software Part.md",
-    "10_Software_part/Untitled.canvas",
     "schema.canvas",
-    "10_Software_part/Schma_Ros2.canvas",
-    "10_Software_part",
-    "schema",
-    "0_Bill_Of_material/BOM aspect.md",
-    "0_Bill_Of_material/first_BOM.pdf",
-    "0_Bill_Of_material/Foglio di lavoro senza nome - Foglio2.pdf",
-    "0_Bill_Of_material/lu15558fvc6.tmp",
-    "0_Bill_Of_material/lu15558fufb.tmp",
-    "0_Bill_Of_material/lu15558ftxp.tmp",
-    "0_Bill_Of_material/lu15558fte8.tmp",
-    "1_Winch_Calculator/winch_calculator.md",
-    "Images/Pasted image 20250403122027 1.png",
-    "5_Old_Calculator/old_calculation.md",
+    "🧠 Main_Documentation.md",
+    "Images/schema.png",
     "README.md",
-    "2_Piston_Calculator/piston_calculator.md",
-    "4_Air_nozzle_Calculator/Rca calculations.md",
+    "0_Bill_Of_material/🧾 BOM aspect.md",
+    "5_Old_Part/🧮 Old_calculations.md",
+    "4_Air_nozzle_Part/📊 Stabilizers calculations.md",
+    "2_Piston_Part/📊 Piston_calculations.md",
+    "1_Winch_Part/📊 Winch_calculations.md",
+    "5_Old_Part",
+    "4_Air_nozzle_Part",
+    "3_Motor_Part/motor_characteristics_original.py",
+    "3_Motor_Part/motor_characteristics_amazon_motor.py",
+    "3_Motor_Part/motor_characteristics_MF_odrive.py",
+    "3_Motor_Part/motor_characteristics_MF.py",
+    "3_Motor_Part/dati_motore_dx.csv",
+    "3_Motor_Part",
+    "1_Winch_Part/Automatic_winch.pptx",
+    "10_Software_part/Software Part.md",
+    "10_Software_part",
+    "Images/Pasted image 20250403122027 1.png",
+    "10_Old_calculations/old_calculation.md",
+    "Untitled.canvas",
+    "4_air_nozzle_calculations/Rca calculations.md",
     "Images/guaina_pet.png",
     "Images/guaina_pet 2.png",
-    "5_Old_Calculator",
     "Images/rcs.png",
     "Images/Screenshot 2025-04-03 121802.png",
-    "4_Air_nozzle_Calculator",
     "Images/piston.png",
     "Images/air_tube.png",
     "Misure.md",
@@ -203,7 +205,6 @@
     "2_Piston_Calculator/Untitled.md",
     "Image/reference_table.jpg",
     "Image/power_suppply_36v.png",
-    "Image/rope_load.png",
     "Documentations_Climb_robot/1_Winch_Calculator/winch calculations (for 1 motor).md",
     "Documentations_Climb_robot/0_Bill_Of_material/BOM aspect.md",
     "Documentations_Climb_robot/Main Documentation.md",
