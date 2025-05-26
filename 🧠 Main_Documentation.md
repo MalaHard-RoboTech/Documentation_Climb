@@ -16,16 +16,21 @@ for readme: [[README]]
 
 ---
 ## 🗃️ Index 
-
+- [[🧾State of art climb robot]]
+- [[🧾Introduciton climb robot]]
+- 
 - [[🧾 BOM aspect]]
 ### ⚙️ Mechanical and physics part
 - [[🧮 Old_calculations]]
 - [[📊 Winch_calculations]]
 - [[📊 Piston_calculations]]
 - [[📊 Stabilizers calculations]]
+
+### 💡 Hardware (electirc) part
+- [[Electric_Part]]
 ### 💻 Software part 
 - [[Software Part]]
-- 
+
 ---
 ## 🔗 Link to schema and Colaboration GIT:
 
