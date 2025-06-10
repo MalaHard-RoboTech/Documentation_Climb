@@ -18,7 +18,6 @@ for readme: [[README]]
 ## 🗃️ Index 
 - [[🧾State of art climb robot]]
 - [[🧾Introduciton climb robot]]
-- 
 - [[🧾 BOM aspect]]
 ### ⚙️ Mechanical and physics part
 - [[🧮 Old_calculations]]
@@ -30,6 +29,8 @@ for readme: [[README]]
 - [[Electric_Part]]
 ### 💻 Software part 
 - [[Software Part]]
+- [[Single Jump]]
+- [[Multi Jump]]
 
 ---
 ## 🔗 Link to schema and Colaboration GIT:
