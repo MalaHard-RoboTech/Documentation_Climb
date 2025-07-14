@@ -24,7 +24,6 @@ for readme: [[README]]
 - [[📊 Winch_calculations]]
 - [[📊 Piston_calculations]]
 - [[📊 Stabilizers calculations]]
-
 ### 💡 Hardware (electirc) part
 - [[Electric_Part]]
 ### 💻 Software part 
@@ -32,6 +31,9 @@ for readme: [[README]]
 - [[Single Jump]]
 - [[Multi Jump]]
 
+### Notes
+ - [[Climb_Robot_general_theory]]
+ - 
 ---
 ## 🔗 Link to schema and Colaboration GIT:
 
