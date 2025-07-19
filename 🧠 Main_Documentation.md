@@ -28,8 +28,7 @@ for readme: [[README]]
 - [[Electric_Part]]
 ### 💻 Software part 
 - [[Software Part]]
-- [[Single Jump]]
-- [[Multi Jump]]
+- [[Multi Jump Main]]
 
 ### Notes
  - [[Climb_Robot_general_theory]]

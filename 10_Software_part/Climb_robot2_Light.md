@@ -1,7 +1,42 @@
+
+---
 ## Index: 
-- [[#Some_tircks]]
-- Functions
-## Explanation: 
+- [[#Installation_step]]
+- [[#Theory]]
+- [[#Code_explain]]
+- [[#~={Orange}Some_tircks=~]]
+- 
+
+
+---
+## Installation_step
+
+
+
+---
+## Theory
+### Flow
+- parts:
+	- **Setup** (Gazebo,load URDF, inizializzazione di Pinocchio, start topic).
+	- **Ottimizzazione offline** (chiamata _optimize_cpp_mex_) per generare la traiettoria di salto ideale e i profili di forza alle funi.
+	- **Orientamento della gamba** verso l’angolo ottimale di spinta.
+	- **Impulso**: applicazione di una forza breve ma intensa sulla gamba retrattile e di tensioni pre-calcolate sulle funi.
+	- **Volo controllato**: un **MPC** corregge in tempo reale le tensioni e, se abilitato, la spinta dei propulsori per ridurre l’errore di tracking.
+	- **Touch-down e landing**: rilevata la forza di contatto, vengono ripristinati i PD.
+	- **Logging and plotting**.
+
+- **orientarsi nel codice**:
+
+| **Parametri tunabili**   | All’inizio di `__init__` e in `base_controllers/params.yaml` |
+| ------------------------ | ------------------------------------------------------------ |
+| **Modello dinamico**     | `updateKinematicsDynamics`                                   |
+| **Ottimizzazione salto** | `initOptim` (offline) e `computeMPC` (online)                |
+| **Macchina a stati**     | Corpo della `while` in `talker(p)`                           |
+| **Propulsori**           | `apply_propeller_moment`, `apply_propeller_force`            |
+| **Logging & Debug**      | `initVars`, `logData`, `plotStuff`                           |
+
+---
+## Code_explain: 
 
 In ***talker*** si va a settare la state machine e il collegamento al robot reale. in `params.py`  si settano i parametri del robot e si inizializza HW interface con il robot reale.
 

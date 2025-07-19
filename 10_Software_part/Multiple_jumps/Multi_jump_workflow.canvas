@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"0b737539b08fca2e","x":-400,"y":-260,"width":570,"height":250,"type":"group","label":"Offline ottimization (before jumps)"},
+		{"id":"bbb13ca05542465e","x":-100,"y":-240,"width":250,"height":60,"color":"1","type":"text","text":"**Outer Loop**"},
+		{"id":"876b844f2275d0de","type":"text","text":"**Inner Loop**","x":-100,"y":-90,"width":250,"height":60,"color":"2"},
+		{"id":"fb19b2625d690017","type":"text","text":"**Inner Loop - with MPC**","x":-100,"y":60,"width":250,"height":60,"color":"3"}
+	],
+	"edges":[
+		{"id":"8ea3bb7b48d6cabc","fromNode":"bbb13ca05542465e","fromSide":"bottom","toNode":"876b844f2275d0de","toSide":"top"},
+		{"id":"2aa725e6c31bcff7","fromNode":"876b844f2275d0de","fromSide":"bottom","toNode":"fb19b2625d690017","toSide":"top"}
+	]
+}
