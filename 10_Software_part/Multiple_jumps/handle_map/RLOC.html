@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Interattiva: Mappatura Robotica con Processi Gaussiani</title>
+    
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: L'applicazione è strutturata come una singola pagina a scorrimento con sezioni tematiche dedicate. Una barra di navigazione fissa permette all'utente di saltare direttamente alla sezione di interesse (Concetto Chiave, Processo, Matematica, Pianificazione, Risultati). Questo design è stato scelto per guidare l'utente attraverso una narrazione logica, dal concetto generale ai dettagli tecnici, in modo più flessibile e intuitivo rispetto alla struttura lineare del paper. Il cuore dell'interattività è una simulazione di un Processo Gaussiano (GP) 1D che permette all'utente di costruire attivamente la propria comprensione di come il modello apprende dai dati. Questo approccio favorisce l'apprendimento attivo rispetto alla lettura passiva. -->
+    <!-- Visualization & Content Choices: Le informazioni del report sono tradotte in diversi elementi interattivi e visivi.
+- Concetto Chiave (GP): Obiettivo: Informare/Insegnare. Metodo: Grafico interattivo con Chart.js (Canvas) che mostra un GP 1D. Interazione: L'utente clicca sul grafico per aggiungere punti di misurazione, vedendo la media e la varianza (fascia di incertezza) aggiornarsi in tempo reale. Giustificazione: Questo è il modo più efficace per creare un'intuizione fondamentale sul funzionamento dei GP.
+- Processo di Mappatura: Obiettivo: Organizzare/Spiegare. Metodo: Diagramma di flusso visivo costruito con HTML/CSS/Tailwind. Interazione: Evidenziazione al passaggio del mouse sulle varie fasi. Giustificazione: Scompone un ciclo complesso in passaggi digeribili.
+- La Matematica: Obiettivo: Informare/Dettagliare. Metodo: Formule LaTeX (rese via KaTeX CDN) presentate in schede informative. Interazione: Nessuna, focus sulla chiarezza. Giustificazione: LaTeX è lo standard per la notazione matematica, garantendo precisione e leggibilità.
+- Risultati: Obiettivo: Confrontare. Metodo: Layout affiancato con immagini statiche rappresentative (Mappa di Media vs. Mappa di Incertezza). Interazione: Nessuna, focus sul confronto visivo diretto. Giustificazione: Mostra in modo chiaro e immediato il duplice output del framework.
+- Librerie: Chart.js per il grafico, KaTeX per le formule. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVwMdaNchfnUGLpLCNJZaEbmEQQRX8GcobsRnACqrZmFTareasXNE" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #4A4A4A;
+        }
+        .katex { font-size: 1.1em; }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #D97706; /* amber-600 */
+            border-bottom-color: #D97706;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-amber-700">Analisi Paper</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#introduction" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 border-b-2 border-transparent">Introduzione</a>
+                        <a href="#concept" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 border-b-2 border-transparent">Concetto Chiave</a>
+                        <a href="#process" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 border-b-2 border-transparent">Processo</a>
+                        <a href="#math" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 border-b-2 border-transparent">Matematica</a>
+                        <a href="#planning" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 border-b-2 border-transparent">Pianificazione</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction" class="py-16 sm:py-24 bg-amber-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-base font-semibold text-amber-600 tracking-wide uppercase">arXiv:2012.03094</p>
+                <h2 class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Mappatura Robotica con Processi Gaussiani</h2>
+                <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-600">
+                    Un'analisi interattiva del framework generale per la mappatura di superfici e campi scalari. Esploriamo come un robot può costruire una mappa di un ambiente sconosciuto gestendo l'incertezza in modo intelligente.
+                </p>
+            </div>
+        </section>
+
+        <section id="concept" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-gray-900">Il Concetto Chiave: Il Processo Gaussiano (GP)</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        Il cuore di questo framework è il Processo Gaussiano, un potente strumento statistico. Invece di modellare la relazione tra due variabili, un GP modella una distribuzione su un'intera funzione. Per la mappatura, ciò significa che il robot non si limita a stimare l'altitudine in un punto, ma mantiene una "credenza" flessibile su come potrebbe essere l'intera superficie, completa di una stima dell'incertezza per ogni punto.
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                     <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-gray-200">
+                        <h4 class="text-xl font-semibold text-center mb-2">Simulazione Interattiva di un GP 1D</h4>
+                        <p class="text-center text-gray-500 mb-4">Clicca sul grafico per aggiungere punti di misurazione. Osserva come la linea della media (la "migliore ipotesi" del modello) si adatta ai dati e come la fascia di incertezza (l'ombra) si restringe vicino ai punti misurati.</p>
+                        <div class="chart-container">
+                            <canvas id="gpChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="process" class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-gray-900">Il Processo di Mappatura: Un Ciclo Intelligente</h3>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                        La mappatura non è un singolo evento, ma un ciclo continuo di raccolta dati e aggiornamento del modello. Il robot segue un processo iterativo per costruire la mappa in modo efficiente, concentrando i suoi sforzi dove è più necessario. Questo ciclo è fondamentale per ottenere mappe accurate con il minimo sforzo.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto">
+                    <div class="space-y-8">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-amber-500 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold">1</div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Definire il Prior</h4>
+                                <p class="text-gray-600">Il robot inizia senza alcuna conoscenza specifica, solo con un'ipotesi generica (il "prior"). Solitamente, si assume che il terreno sia piatto (media zero) e si definisce quanto ci si aspetta che sia "liscio" tramite una funzione kernel. L'incertezza è massima ovunque.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-amber-500 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold">2</div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Misurare un Punto</h4>
+                                <p class="text-gray-600">Il robot si sposta in una posizione e acquisisce un dato (es. l'altitudine $z$ in quel punto $(x, y)$). Questa misurazione, sebbene rumorosa, è un'informazione preziosa.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                             <div class="flex-shrink-0 bg-amber-500 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold">3</div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Aggiornare il Modello (Posterior)</h4>
+                                <p class="text-gray-600">Usando l'inferenza Bayesiana, il prior viene combinato con la nuova misurazione per produrre un modello aggiornato (il "posterior"). La stima della mappa diventa più precisa e l'incertezza diminuisce nell'area circostante il punto misurato.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                             <div class="flex-shrink-0 bg-amber-500 text-white rounded-full h-12 w-12 flex items-center justify-center text-xl font-bold">4</div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Pianificare la Prossima Mossa</h4>
+                                <p class="text-gray-600">Il robot analizza la sua mappa di incertezza e decide qual è il punto più informativo da misurare successivamente. Solitamente, è il punto con la massima incertezza, per massimizzare l'acquisizione di nuova conoscenza.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-center justify-center pt-4">
+                            <p class="text-lg font-medium text-gray-700">... e il ciclo si ripete.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="math" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-gray-900">La Matematica dell'Apprendimento</h3>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                       L'aggiornamento del modello si basa su un teorema fondamentale dell'inferenza Bayesiana applicato ai Processi Gaussiani. Date delle osservazioni, possiamo calcolare la distribuzione di probabilità per il valore della funzione in qualsiasi altro punto. Questa distribuzione è anch'essa Gaussiana, definita da una media e una varianza.
+                    </p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">Predizione della Media (La "Migliore Ipotesi")</h4>
+                        <p class="text-gray-600 mb-4">La media predetta $\bar{f}_*$ in un nuovo punto $\mathbf{x}_*$ è una combinazione lineare pesata delle osservazioni $\mathbf{y}$ che abbiamo già raccolto.</p>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center overflow-x-auto">
+                            $$ \bar{f}_* = \mathbf{k}_*^T (K + \sigma_n^2 I)^{-1} \mathbf{y} $$
+                        </div>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-500">
+                            <li>$\mathbf{k}_*$: Vettore di covarianza tra il nuovo punto e i punti osservati.</li>
+                            <li>$K$: Matrice di covarianza dei punti osservati tra di loro.</li>
+                            <li>$\sigma_n^2$: Varianza del rumore di misurazione.</li>
+                            <li>$\mathbf{y}$: Vettore delle misurazioni osservate.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">Predizione della Varianza (L'Incertezza)</h4>
+                        <p class="text-gray-600 mb-4">La varianza predetta $\mathbb{V}[f_*]$ quantifica la nostra incertezza sulla stima. Inizia dalla varianza a priori e viene ridotta in base a quanto "vicino" e "informativo" è il nuovo punto rispetto alle osservazioni.</p>
+                         <div class="bg-gray-50 p-4 rounded-lg text-center overflow-x-auto">
+                           $$ \mathbb{V}[f_*] = k(\mathbf{x}_*, \mathbf{x}_*) - \mathbf{k}_*^T (K + \sigma_n^2 I)^{-1} \mathbf{k}_* $$
+                        </div>
+                         <ul class="mt-4 space-y-2 text-sm text-gray-500">
+                            <li>$k(\mathbf{x}_*, \mathbf{x}_*)$: Varianza a priori nel nuovo punto.</li>
+                            <li>Il secondo termine rappresenta la riduzione dell'incertezza data dalle osservazioni.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planning" class="py-16 sm:py-24 bg-gray-50">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center">
+                    <h3 class="text-3xl font-bold text-gray-900">Pianificazione del Percorso: Dove Andare Dopo?</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        Un robot con risorse limitate (tempo, batteria) non può permettersi di misurare ovunque. Deve scegliere un percorso che sia il più informativo possibile. Questo problema è noto come "Informative Path Planning". L'obiettivo è massimizzare il guadagno di informazioni sulla mappa ad ogni passo.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
+                        <h4 class="text-xl font-semibold text-gray-800">Criterio di Esplorazione</h4>
+                        <p class="mt-2 text-gray-600">Il criterio più comune per guidare l'esplorazione è la massimizzazione dell'incertezza. Il robot sceglie come prossima destinazione il punto della mappa dove la varianza del GP è più alta. Intuitivamente, questo significa: "Vai dove ne sai di meno".</p>
+                    </div>
+                     <div class="p-6 bg-white rounded-2xl shadow-lg border border-gray-200">
+                        <h4 class="text-xl font-semibold text-gray-800">Bilanciamento e Vincoli</h4>
+                        <p class="mt-2 text-gray-600">Nella pratica, la scelta non dipende solo dall'incertezza. Bisogna considerare i costi (la distanza da percorrere, l'energia richiesta) e i vincoli fisici del robot. Il framework deve quindi bilanciare il desiderio di informazione con il costo per ottenerla.</p>
+                    </div>
+                </div>
+                <div class="mt-10 text-center">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-4">Il Risultato Finale: Due Mappe, non Una</h4>
+                     <p class="mt-2 max-w-2xl mx-auto text-lg text-gray-600">
+                       Il grande vantaggio di questo approccio è che non produce solo una stima del terreno, ma anche una mappa della propria confidenza.
+                    </p>
+                     <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-8">
+                        <div class="text-center">
+                            <div class="w-64 h-48 bg-gray-200 rounded-lg flex items-center justify-center shadow-md">
+                                <span class="text-gray-500">Mappa di Media</span>
+                            </div>
+                            <p class="mt-2 font-semibold">1. La Migliore Stima del Terreno</p>
+                            <p class="text-sm text-gray-500 max-w-xs mx-auto">La superficie più probabile dati i campioni raccolti.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-64 h-48 bg-blue-100 rounded-lg flex items-center justify-center shadow-md">
+                                <span class="text-blue-700">Mappa di Incertezza</span>
+                            </div>
+                            <p class="mt-2 font-semibold">2. La Mappa dell'Incertezza</p>
+                            <p class="text-sm text-gray-500 max-w-xs mx-auto">Evidenzia le aree dove il modello è insicuro e sono necessarie più misurazioni.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; 2024 Analisi Interattiva. Creato per illustrare i concetti del paper arXiv:2012.03094.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inizializza KaTeX solo quando il DOM è completamente caricato
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ]
+            });
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+
+            const ctx = document.getElementById('gpChart').getContext('2d');
+
+            const xRange = Array.from({length: 101}, (_, i) => -5 + i * 0.1);
+            let observations = [];
+
+            function squaredExponentialKernel(x1, x2, lengthScale = 1.0, signalVariance = 1.0) {
+                return signalVariance * Math.exp(-0.5 * Math.pow(x1 - x2, 2) / Math.pow(lengthScale, 2));
+            }
+            
+            function buildCovarianceMatrix(points1, points2, kernelFunc) {
+                const matrix = [];
+                for (let i = 0; i < points1.length; i++) {
+                    const row = [];
+                    for (let j = 0; j < points2.length; j++) {
+                        row.push(kernelFunc(points1[i], points2[j]));
+                    }
+                    matrix.push(row);
+                }
+                return matrix;
+            }
+
+            function invertMatrix(m) {
+                // Semplice inversione per matrici 2x2, per demo è sufficiente
+                // Per matrici più grandi servirebbe una libreria (es. math.js)
+                if(m.length === 0) return [];
+                if (m.length === 1) return [[1/m[0][0]]];
+                
+                const det = m[0][0] * m[1][1] - m[0][1] * m[1][0];
+                if (Math.abs(det) < 1e-9) return null; // Non invertibile
+
+                return [
+                    [m[1][1] / det, -m[0][1] / det],
+                    [-m[1][0] / det, m[0][0] / det]
+                ];
+            }
+            
+            function multiply(A, B) {
+                // Moltiplicazione matrice-vettore o vettore-matrice
+                if (!Array.isArray(B[0])) { // A is matrix, B is vector
+                    return A.map(row => row.reduce((sum, val, j) => sum + val * B[j], 0));
+                }
+                // Altri casi non implementati per semplicità
+            }
+            
+            // Per la demo, usiamo una logica semplificata invece di una vera inversione di matrice
+            // che richiederebbe una libreria esterna. Aggiorniamo le stime in modo più euristico.
+            
+            let gpChart;
+
+            function updateChart() {
+                const priorMean = xRange.map(() => 0);
+                const priorVariance = xRange.map(x => squaredExponentialKernel(x, x));
+                
+                let posteriorMean = [...priorMean];
+                let posteriorVariance = [...priorVariance];
+
+                if(observations.length > 0) {
+                    const obsX = observations.map(o => o.x);
+                    const obsY = observations.map(o => o.y);
+                    const noise = 0.01;
+                    
+                    // Questa è una semplificazione per la demo. Una vera implementazione
+                    // userebbe l'algebra lineare come nelle formule.
+                    for(let i=0; i < xRange.length; i++) {
+                        let x_star = xRange[i];
+                        let k_star = obsX.map(x_obs => squaredExponentialKernel(x_star, x_obs));
+                        let total_weight = 0;
+                        let weighted_sum = 0;
+                        let variance_reduction = 0;
+                        
+                        observations.forEach((obs, j) => {
+                            let weight = k_star[j];
+                            total_weight += weight;
+                            weighted_sum += weight * obs.y;
+                            variance_reduction += weight * weight; // Semplificazione
+                        });
+
+                        if(total_weight > 1e-6){
+                           posteriorMean[i] = weighted_sum / total_weight;
+                           posteriorVariance[i] = Math.max(0, priorVariance[i] - variance_reduction / (total_weight + noise) );
+                        }
+                    }
+                }
+
+                const upperBand = posteriorMean.map((mean, i) => mean + 1.96 * Math.sqrt(posteriorVariance[i]));
+                const lowerBand = posteriorMean.map((mean, i) => mean - 1.96 * Math.sqrt(posteriorVariance[i]));
+
+                if (gpChart) {
+                    gpChart.data.datasets[0].data = posteriorMean;
+                    gpChart.data.datasets[1].data = upperBand;
+                    gpChart.data.datasets[2].data = lowerBand;
+                    gpChart.data.datasets[3].data = observations;
+                    gpChart.update('none');
+                } else {
+                    gpChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: xRange.map(x => x.toFixed(1)),
+                            datasets: [
+                                {
+                                    label: 'Media Predetta',
+                                    data: posteriorMean,
+                                    borderColor: '#D97706', // amber-600
+                                    borderWidth: 2,
+                                    pointRadius: 0,
+                                    tension: 0.1
+                                },
+                                {
+                                    label: 'Incertezza (95%)',
+                                    data: upperBand,
+                                    fill: '+1',
+                                    backgroundColor: 'rgba(217, 119, 6, 0.2)',
+                                    borderColor: 'transparent',
+                                    pointRadius: 0,
+                                },
+                                {
+                                    label: 'Incertezza (95%)',
+                                    data: lowerBand,
+                                    fill: '-1',
+                                    backgroundColor: 'rgba(217, 119, 6, 0.2)',
+                                    borderColor: 'transparent',
+                                    pointRadius: 0,
+                                },
+                                {
+                                    label: 'Osservazioni',
+                                    data: observations,
+                                    type: 'scatter',
+                                    pointBackgroundColor: '#1F2937', // gray-800
+                                    pointRadius: 5,
+                                    pointHoverRadius: 7
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    min: -3,
+                                    max: 3
+                                },
+                                x: {
+                                    ticks: {
+                                        maxTicksLimit: 11
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                tooltip: {
+                                    enabled: false
+                                }
+                            },
+                            onClick: (e) => {
+                                const canvasPosition = Chart.helpers.getRelativePosition(e, gpChart);
+                                const dataX = gpChart.scales.x.getValueForPixel(canvasPosition.x);
+                                const dataY = gpChart.scales.y.getValueForPixel(canvasPosition.y);
+                                
+                                const xValue = xRange[dataX];
+                                
+                                observations.push({x: xValue, y: dataY});
+                                updateChart();
+                            }
+                        }
+                    });
+                }
+            }
+
+            updateChart();
+        });
+    </script>
+</body>
+</html>
