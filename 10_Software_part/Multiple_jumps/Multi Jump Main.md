@@ -15,7 +15,7 @@
 ### Scripts: 
 - [py_cemmd](https://github.com/itsikelis/py_cemmd) --> by [Ioannis_Tsikelis](https://itsikelis.github.io/) --> [[Mixed Distribution Cross Entropy Method]]
 - [[Climb_robot2_Light]] --> [link_code](https://github.com/mfocchi/robot_control/blob/traj_optimization/base_controllers/climbingrobot_controller/climbingrobot_controller2_light.py#L272)
-### [[Handle_map]]
+### [[Managment_map]]
 
 ---
 ## Flow of blocks:

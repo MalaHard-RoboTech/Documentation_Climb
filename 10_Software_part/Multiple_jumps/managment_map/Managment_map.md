@@ -1,27 +1,21 @@
 
 ## Index
-
-
-
 [[#Theory]]
 [[#Script_part_explanation]]
-
-Link:
-- [RLOC: Terrain-Aware Legged Locomotion using Reinforcement Learning and Optimal Control](https://arxiv.org/pdf/2012.03094)
-	- [code](https://github.com/ori-drs/rloc_manuscript_supplementary_code/tree/master?tab=readme-ov-file)
-- [grid_map](https://github.com/ANYbotics/grid_map) --> general idea
 
 
 ---
 ## Theory
 
-**Obiettivo**: Data una qualsiasi mappa 3D, creare una cost_map che associa ogni punto della mappa 3D, una funzione di costo, che ne indichi la facilità di atterraggio e di spinta.
-
+**Obiettivo**: Prima di saltare, Data una qualsiasi mappa 3D, creare una cost_map che associa ogni punto della mappa 3D, una funzione di costo, che ne indichi la facilità di atterraggio e di spinta.
+abbiamo un outer (trovare i punti per saltare) e un innerloop (salto intermedio tra i punti)
 Esempio: migliori punti di placca/piani che buchi o altre increspature
 
 ---
 ## Script_part_explanation
 
+link: [cost_map_generator](https://chatgpt.com/c/687df412-3470-8013-a9fd-80f0f00c3b0a) 
+La mappa dei costi rappresenta quanto è "difficile" attraversare ciascun punto di un terreno in base alla pendenza o alle irregolarità.
 
 
 
@@ -32,8 +26,8 @@ Esempio: migliori punti di placca/piani che buchi o altre increspature
 
 ### [RLOC: Terrain-Aware Legged Locomotion using Reinforcement Learning and Optimal Control](https://arxiv.org/pdf/2012.03094)
 
-chatgpt detail : https://chatgpt.com/c/687d40a4-0550-8013-b12a-63f80f1e40e8
-
+**proprioceptive** --> internal robot sensors (IMU)
+extereoceptive --> external robot sensor (camera)
 
 in this paper used the on-board proprioceptive and extereoceptive feedback to map sensory information and commands into footstep plans using a reinforcement learning (RL) policy.
 **Elevation Map Encoding** (elevetion mapping framework).
@@ -91,8 +85,15 @@ strategie come l'apprendimento per trasferimento possono essere utilizzate per r
 
 **denoising convolutional auto-encoding strategy**
 
+---
+Point cloud: 
+![[Pasted image 20250721093724.png]]
+filtering + clustering
 
 
+
+
+---
 
 ### GridMap by AnyBotics
 
@@ -115,3 +116,18 @@ ontiene il **codice supplementare** e i **file di configurazione (principalmente
 
 nasce come uso insieme ad una interfaccia utente chiamata Director: 
 https://github.com/ori-drs/director
+
+
+
+other note: 
+
+chatgpt detail : https://chatgpt.com/c/687d40a4-0550-8013-b12a-63f80f1e40e8
+## Biografy and Link:
+
+- [RLOC: Terrain-Aware Legged Locomotion using Reinforcement Learning and Optimal Control](https://arxiv.org/pdf/2012.03094)
+	- [code](https://github.com/ori-drs/rloc_manuscript_supplementary_code/tree/master?tab=readme-ov-file)
+- [grid_map](https://github.com/ANYbotics/grid_map) --> general idea
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9133154
+- https://arxiv.org/pdf/2206.14049
+- [[Filter on point cloud and Cost]]
+

@@ -1,6 +1,6 @@
 ## Code_cemmd_explain
-Minimal Python implementation of a Mixed Distribution Cross Entropy Method
-Questo codice implementa un **algoritmo evolutivo che lavora su variabili miste** (discrete + continue), mantenendo e aggiornando una popolazione, selezionando gli elite e aggiornando le distribuzioni di probabilità per concentrare la ricerca verso le regioni promettenti dello spazio delle soluzioni.
+
+This code implements an **evolutionary algorithm that operates on mixed variables** (discrete + continuous). It maintains and updates a population, selects the elites, and updates the probability distributions to focus the search on promising regions of the solution space.
 ### Algo.py
 - Used to optimize discrete variable and continue variable in the same time.
 
@@ -14,10 +14,9 @@ Questo codice implementa un **algoritmo evolutivo che lavora su variabili miste*
 - Continuos variables
 
 **`IterationLog`** : tiene traccia delle migliori iterazioni, sia discrete che continue
-			
 
 **`CrossEntropyMethodMixed`**:
-	classe principle, le funzioni principali: 
+	Classe principale, le funzioni principali: 
 		***generate_population:***
 			***generate_population_discrete***:
 				Genera la parte **discreta** della popolazione in base alle probabilità correnti. from `pop_size`
