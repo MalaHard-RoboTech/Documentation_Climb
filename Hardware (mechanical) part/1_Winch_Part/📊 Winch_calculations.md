@@ -106,7 +106,7 @@ Given that the amount of current draw on the robot could be significant dependin
 We have tested to make sure it can handle at least 500N.
 
 
-Suppose we want 600W of available power onboard for electronics and other actuators we should use a high voltage for decreasing transmission losses like 48 V we have  12.5 A  a 14 awg cable can be suitable.  [[🧾 BOM aspect]] 
+Suppose we want 600W of available power onboard for electronics and other actuators we should use a high voltage for decreasing transmission losses like 48 V we have  12.5 A  a 14 awg cable can be suitable.  [[🧾 BOM climbing robots]] 
 
 
 

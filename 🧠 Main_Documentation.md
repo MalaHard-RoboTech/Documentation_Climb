@@ -1,10 +1,11 @@
-~={red}**Welcome to the Climb Robot / Alpine Robot Project Documentation**=~
+rv~={red}**Welcome to the Climb Robot / Alpine Robot Project Documentation**=~
 
-This documentation covers the complete development process of the Climb Robot (also known as the Alpine Robot). Here you will find detailed information about the design and implementation of the robot, including:
+This documentation covers the complete development process of the Climb Robot (also known as the Alpine Robot). Here you will find detailed information about the design, structure and implementation of the robot, including:
 
 - Electrical components and circuit design
+- Mechanical components and design 
 - Physics-based calculations for selecting and simulating mechanical parts
-- Software architecture and Python tools used for various computations
+- Software architecture and Python tools used for various computations (like multi jump and single jump)
 - Helpful links and references to better understand the entire project
 
 The main section of this document serves as a central hub, with an index of all related files and areas within the Obsidian workspace. Each section links to specific scripts, tools, and explanations that support the robot's development from concept to prototype.
@@ -16,23 +17,25 @@ for readme: [[README]]
 
 ---
 ## 🗃️ Index 
-- [[🧾State of art climb robot]]
-- [[🧾Introduciton climb robot]]
-- [[🧾 BOM aspect]]
-### ⚙️ Mechanical and physics part
+- [[🧾 State of art climb robot]]
+- [[🧾 Introduction climb robot]]
+- [[🤝 Team of the Climbing Robot]]
+- [[🧾 BOM climbing robots]]
+### [[⚙️ Hardware (mechanical) part]]
 - [[🧮 Old_calculations]]
 - [[📊 Winch_calculations]]
 - [[📊 Piston_calculations]]
 - [[📊 Stabilizers calculations]]
-### 💡 Hardware (electirc) part
-- [[Electric_Part]]
-### 💻 Software part 
-- [[Software Part]]
-- [[Multi Jump Main]]
+### [[💡 Hardware (electric) part]]
+
+### [[💻 Software part]] 
+
+### 📝 Thesis
+- Mechatronics Design of the Alpine Climbing Robot
+- Multi-jump Trajectory Optimizer and Software Design of the Alpine Climbing Robot 
 
 ### Notes
- - [[Climb_Robot_general_theory]]
- - 
+ - [[🧾 Climb Robot general theory]]
 ---
 ## 🔗 Link to schema and Colaboration GIT:
 
@@ -43,25 +46,34 @@ for readme: [[README]]
   
 >[!Note] **NOTE**: to see value about matlab Simulation see the following excel file: 
   
- Here you can find the results calculated using simulation matlab of this repo: [Matlab_Scripts](https://github.com/MalaHard-RoboTech/Matlab_Scirpts)
-in the following Excel
+  - [Matlab_Scripts](https://github.com/MalaHard-RoboTech/Matlab_Scirpts)
  - [Matlab_result](Misure_Matlab.xlsx)
- 
- 
-
 ---
-## 🔗 Usefull Link
+## 🔗 Usefull Link and software used
 
+- Odrive tool
+Odrive_link: [link](https://odriverobotics.com/)
+Odirve_GUI: [link](https://gui.odriverobotics.com/)
+Torque_speed_simulation:[link](https://www.desmos.com/calculator/1bw85mchnu)
+
+- Tutorial:
 Motor_Driver: [link](https://www.youtube.com/watch?v=9UxTPxgvOAA)
 Tutorial_gitSubmodule: [link](https://youtu.be/wTGIDDg0tK8?si=bb5k6O9tb5w0m2Zo)
+
+- Software and environments used: 
+ROS1: [link](https://docs.ros.org/)
+ROS2: [link](https://docs.ros.org/en/jazzy/index.html)
+MATLAB: [link](https://it.mathworks.com/?s_tid=user_nav_logo)
+Fusion360: [link](https://www.autodesk.com/it/products/fusion-360/overview)
+
 
 --- 
 ## 🧾 Trick Code usefull if you clone repo
 
 ```
-git config --global user.name TEXflip
+git config --global user.name name
 
-git config --global user.email michele.tessari12@gmail.com
+git config --global user.email name.surname@gmail.com
 
 ssh-keygen
 
