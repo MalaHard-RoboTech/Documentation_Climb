@@ -4,6 +4,8 @@ Welcome to the **Climb Robot** (also known as the **Alpine Robot**) project docu
 
 This repository serves as the **main index** for all materials, tools, and notes related to the development of the Climb Robot. It is organized using **Obsidian**, a powerful knowledge base tool that helps you manage all your ideas and files in a single, connected workspace.
 
+main page of the Documentation is this: [[🧠 Alpine_Documentation]]
+
 ---
 
 ## 📚 What You'll Find Inside
@@ -14,7 +16,7 @@ This repository serves as the **main index** for all materials, tools, and notes
 - ⚙️ **Physics-Based Calculations**  
   Simulations and formulas used to select motors, gears, and other mechanical parts.
 
-- 🧠 **Software Architecture**  
+- 🧠 **Software Architecture**  and firmware
   Overview of the control logic, including Python tools used to perform various tasks such as trajectory planning and motor control.
 
 - 🧪 **Python Script Tools**  
@@ -25,19 +27,22 @@ This repository serves as the **main index** for all materials, tools, and notes
 
 ---
 
-## 🗂️ How to Use This Documentation
-
-All files are organized within an **Obsidian vault**, with backlinks, tags, and embedded media for seamless navigation. To get started:
-
-1. [Download Obsidian](https://obsidian.md/download)
-2. Open this folder as a vault
-3. Start exploring from the `Main.md` file or the homepage of the vault
+All files are organized within an **Obsidian vault**, with backlinks, tags, and embedded media for seamless navigation
 
 ---
 
-## 📥 Download Obsidian
+## 📥 How open the documentation:
 
-To explore the documentation effectively, you need [Obsidian](https://obsidian.md/download) — a free, powerful knowledge base tool.
+## LINUX or MACos:
+
+run file `server_doc.sh` and automatically the following web page will open
+or click this: 
+http://localhost:8080/1_climb_robot_thesis/%F0%9F%A7%A0-main_documentation.html
+## Windows 11:
+double click on `server_doc.bat` and automatically the following web page will open
+or click this: 
+http://localhost:8080/1_climb_robot_thesis/%F0%9F%A7%A0-main_documentation.html
+
 
 ---
 

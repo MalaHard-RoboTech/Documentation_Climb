@@ -1,4 +1,4 @@
-rv~={red}**Welcome to the Climb Robot / Alpine Robot Project Documentation**=~
+~={red}**Welcome to the Climb Robot / Alpine Robot Project Documentation**=~
 
 This documentation covers the complete development process of the Climb Robot (also known as the Alpine Robot). Here you will find detailed information about the design, structure and implementation of the robot, including:
 
@@ -13,7 +13,11 @@ for readme: [[README]]
 
 ---
 ## Schema of all structure
+this following schema represent the structure about of the our space
 ![[schema.canvas]]
+
+Instead the work flow communication in Software part see this schema:
+![[Alpine_workflow.excalidraw]]
 
 ---
 ## 🗃️ Index 
