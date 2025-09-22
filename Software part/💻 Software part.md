@@ -24,9 +24,9 @@ Using this link you can see also the schema about ros2 developer system: [link_d
 - [[Mixed Distribution Cross Entropy Method]]
 
 ## Cost map and point cloud handler
-- [[Cost_map]]
+- [[💵Cost_map]]
 this part is occupy to create a cost map from a point cluod data the blocks of the system of this part is the following:
 
-
+## Web App
 
 ## Ros1_2 Bridge

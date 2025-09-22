@@ -13,7 +13,7 @@
 		{"id":"8cded0dae3c6cdd4","type":"text","text":"**[[💡 Hardware (electric) part]]**","x":-645,"y":-207,"width":255,"height":60,"color":"2"},
 		{"id":"0479b825a726a795","type":"text","text":"[[⚙️ Hardware (mechanical) part]]","x":-1280,"y":-197,"width":323,"height":50,"color":"2"},
 		{"id":"821cdb262070cd33","type":"text","text":"**[[💻 Software part]]**","x":-893,"y":-137,"width":173,"height":60,"color":"2"},
-		{"id":"6335a8245ee5e505","type":"text","text":"**[[Cost_map]]**","x":-876,"y":-57,"width":144,"height":27,"color":"#321aad"},
+		{"id":"6335a8245ee5e505","type":"text","text":"**[[💵Cost_map]]**","x":-876,"y":-57,"width":144,"height":27,"color":"#321aad"},
 		{"id":"059712357e2acd48","type":"text","text":"**[🚧 ros2_ws](https://github.com/MalaHard-RoboTech/ros2_ws)**","x":-240,"y":-300,"width":195,"height":60,"color":"#321aad"},
 		{"id":"acc6d4983fb45a10","type":"text","text":"**[cl_arganello_interface](https://github.com/MalaHard-RoboTech/Climb_ros2/tree/main/cl_arganello_interface)**","x":-60,"y":-210,"width":260,"height":27,"color":"#a200fa"},
 		{"id":"90332253f51da177","type":"text","text":"**[cl_task_manager](https://github.com/MalaHard-RoboTech/Climb_ros2/tree/main/cl_task_manager)**","x":-60,"y":-177,"width":260,"height":27,"color":"#a200fa"},

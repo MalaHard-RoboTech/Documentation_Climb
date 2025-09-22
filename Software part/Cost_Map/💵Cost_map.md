@@ -12,45 +12,76 @@
 ---
 ## Design
 
-**Obiettivo**: Prima di saltare, Data una qualsiasi mappa 3D, creare una cost_map che associa ogni punto della mappa 3D, una funzione di costo, che ne indichi la facilità di atterraggio e di spinta.
-abbiamo un outer (trovare i punti per saltare) e un innerloop (salto intermedio tra i punti)
-Esempio: migliori punti di placca/piani che buchi o altre increspature
+**Objective**: Before jumping, givean ant 3D map, create a cost_map that associates each point on the 3D map, with cost function, indicating its ease of landing and thrust. 
+We have an outer loop and inner loop to control the exact point to landing to achieve a position of the robot. 
 
 ---
 
 
 ## Filter and point cloud manager
+The Filter types used are: 
+- Blur
 
+| **Blur**                                            |
+| --------------------------------------------------- |
+| \| 1  1  1 \|<br>\| 1  1  1 \| * 9<br>\| 1  1  1 \| |
+Inside of the point cloud, it's used to reduce the noise
+
+- Smoothing: 
+
+| Smoothing:                                              |
+| ------------------------------------------------------- |
+| \| 1  2  1 \|<br>\| 2  4  2 \| * 1/16 <br>\| 1  2  1 \| |
+used to "smussare" some points, but mantain the picchi e gradini
+
+- Sobel (for I derivative):
+
+| Sobel X                                            | Sobel Y                                               |
+| -------------------------------------------------- | ----------------------------------------------------- |
+| \| -1  0  1 \|<br>\| -2  0  2 \|<br>\| -1  0  1 \| | \| -1 -2 -1 \| <br>\|  0  0  0  \|<br>\|  1  2  1  \| |
+used to find the "pendenza"(gradiente) 
+
+- Laplacian:
+
+| Laplacian:                                      |
+| ----------------------------------------------- |
+| \| 0  1  0 \|<br>\| 1 -4  1 \|<br>\| 0  1  0 \| |
+second derivative, evidenzia zone di cambiamento brusco (trova curvature nel terreno)
+valori positivi --> depressione/buchi
+valori negadivi --> gobba i punte
+
+
+- LoG (Laplace of Gaussian):
+
+| Laplacian Of Gaussian                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------- |
+| \| 0   0   1   0   0 \|<br>\| 0   1   2   1   0 \|<br>\| 1   2  -16  2  1\|<br>\| 0   1   2   1   0 \|<br>\| 0   0   1   0   0 \| |
+simile al filtro laplaciano di derivata seconda ma con un gaussian filter.
+
+> **Note:** nel codice i valori più bianchi sono valori che hanno la massima pendenza o bordo
+
+It's decided to use the Kernel filter in 2 Dimension because is more rubost and fast and it's possible re adpt in different scenarios, also out of Point cloud sistem, but also using a normal camera or other stuff.
+Use the principle of the [image processing](https://en.wikipedia.org/wiki/Image_processing), a **kernel**, **convolution matrix**, or **mask** is a small [matrix](https://en.wikipedia.org/wiki/Matrix_\(mathematics\) "Matrix (mathematics)") used like [edge detection](https://en.wikipedia.org/wiki/Edge_detection "Edge detection") in a image (a matrix much bigger). Or more simply, when each pixel in the output image is a function of the nearby pixels (including itself) in the input image, the kernel is that function.
+
+---
 ### What is a convolution: 
 link: [here](https://medium.com/advanced-deep-learning/cnn-operation-with-2-kernels-resulting-in-2-feature-mapsunderstanding-the-convolutional-filter-c4aad26cf32)
 example: [here](https://medium.com/@ianormy/convolution-filters-4971820e851f)
-matrice di convoluzione o kernel è una matrice usata per applicare un filtro ad un immagine o matrici 3D come point cloud, facendo scorrere il kernel su tutta la matrice di input. 
 
+A convolution matrix or kernel is a matrix used to apply a filter to an image or 3D matrices such as point clouds, by sliding the kernel across the entire input matrix
 
-matrice di convoluzione:
+Example of the convolution matirx:
 ![[Pasted image 20250727162531.png]]
 
 ### Convolution with point cloud:
 point cloud is a vector/matrix: N*3 ,where each row is a point (x,y,z)
-
-
 ### Interpolation in a grid
 to use the filter in a point cloud, we interpolate the point cloud in a uniform grid.
 to create a "2D image", or matrix where: 
 - asse **Y → asse orizzontale** della parete (lunghezza)
 - asse **Z → profondità**
 - valore dei pixel = altezza `X` interpolata sulla griglia `(Y, Z)`
-come se fosse una mappa altimetrica
-
----
-### Sobel Filter
-used to find the contour of an image.
-Have a small computation
-
-Example on 2 coordinates:
-![[Screenshot from 2025-07-27 16-39-48.png]]
-viene usato in 
-
+like an "MAPPA ALTIMETRICA"
 
 ---
 ## Reference
