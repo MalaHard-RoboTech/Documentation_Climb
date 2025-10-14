@@ -8,7 +8,7 @@
 		{"id":"087fd3e7aa0b689e","type":"group","x":-260,"y":-30,"width":480,"height":154,"color":"5","label":"Climb_ros1"},
 		{"id":"0baba347b6c72946","type":"group","x":-893,"y":-67,"width":258,"height":207,"color":"2","label":"..."},
 		{"id":"0536bc30e106389c","type":"group","x":-1270,"y":-140,"width":340,"height":156,"color":"2","label":"..."},
-		{"id":"6b0ef5ebb196c543","type":"text","text":"**[[🧠 Alpine_Documentation]]**","x":-922,"y":-290,"width":238,"height":60,"color":"#321aad"},
+		{"id":"6b0ef5ebb196c543","type":"text","text":"**[[🧠_Alpine_Documentation]]**","x":-922,"y":-290,"width":238,"height":60,"color":"#321aad"},
 		{"id":"9f64b55cbc3b2fdf","type":"text","text":"documentation alpine\nmechanical -- electrical -- software part","x":-662,"y":-290,"width":342,"height":60},
 		{"id":"8cded0dae3c6cdd4","type":"text","text":"**[[💡 Hardware (electric) part]]**","x":-645,"y":-207,"width":255,"height":60,"color":"2"},
 		{"id":"0479b825a726a795","type":"text","text":"[[⚙️ Hardware (mechanical) part]]","x":-1280,"y":-197,"width":323,"height":50,"color":"2"},

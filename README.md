@@ -4,7 +4,7 @@ Welcome to the **Climb Robot** (also known as the **Alpine Robot**) project docu
 
 This repository serves as the **main index** for all materials, tools, and notes related to the development of the Climb Robot. It is organized using **Obsidian**, a powerful knowledge base tool that helps you manage all your ideas and files in a single, connected workspace.
 
-main page of the Documentation is this: [[🧠 Alpine_Documentation]]
+main page of the Documentation is this: [[🧠_Alpine_Documentation]]
 
 ---
 
